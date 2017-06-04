@@ -11,6 +11,7 @@ public class SocketClientApplication extends Application {
     private Activity activity;
     private Client client;
     private static SocketClientApplication instance;
+    private boolean isConnected;
 
     @Override
     public void onCreate() {
@@ -36,5 +37,13 @@ public class SocketClientApplication extends Application {
 
     public void setActivity(Activity activity) {
         this.activity = activity;
+    }
+
+    public boolean isConnected() {
+        return isConnected;
+    }
+
+    public void setConnected(boolean connected) {
+        isConnected = connected;
     }
 }

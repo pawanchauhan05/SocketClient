@@ -1,8 +1,11 @@
 package com.android.socketclient.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 
+import com.android.socketclient.Utils.Constants;
+import com.android.socketclient.Utils.Utils;
 import com.android.socketclient.activity.ChatActivity;
 import com.android.socketclient.activity.OnlineUsersActivity;
 import com.android.socketclient.models.ChatMessage;
@@ -35,16 +38,19 @@ public class Client {
         this.userName = userName;
     }
 
+    public Socket getSocket() {
+        return socket;
+    }
+
     public static Client getInstance(String userName) {
         if(instance == null) {
             instance = new Client(userName);
             if(instance != null)
                 instance.createConnection();
         } else {
-            if(!instance.socket.isConnected())
+            if(instance.socket != null && !instance.socket.isConnected())
                 instance.createConnection();
         }
-        SocketClientApplication.getInstance().setClient(instance);
         return instance;
     }
 
@@ -57,6 +63,9 @@ public class Client {
                     bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     printWriter = new PrintWriter(socket.getOutputStream(),true);
                     printWriter.println(userName);
+                    SocketClientApplication.getInstance().setClient(instance);
+                    Utils.savePreferenceData(SocketClientApplication.getInstance().getApplicationContext(), Constants.USER_NAME, userName);
+                    SocketClientApplication.getInstance().getActivity().startActivity(new Intent(SocketClientApplication.getInstance().getActivity(), OnlineUsersActivity.class));
                     while (true) {
                         final String serverString = bufferedReader.readLine();
                         final Activity currentActivity = SocketClientApplication.getInstance().getActivity();

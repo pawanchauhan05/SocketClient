@@ -6,4 +6,5 @@ package com.android.socketclient.Utils;
 
 public class Constants {
     public static final String SERVER = "192.168.43.50";
+    public static final String USER_NAME = "USER_NAME";
 }

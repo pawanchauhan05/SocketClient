@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.android.socketclient.activity.OnlineUsersActivity">
 
+    <include layout="@layout/internet_connectivity_layout"/>
+
     <TextView
+        android:layout_below="@+id/frameLayoutInternet"
         android:textSize="16dp"
         android:gravity="center"
         android:id="@+id/textViewTitle"

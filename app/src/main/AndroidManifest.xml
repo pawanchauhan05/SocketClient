@@ -21,7 +21,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.OnlineUsersActivity" />
-        <activity android:name=".activity.ChatActivity"></activity>
+        <activity android:name=".activity.ChatActivity" />
+
+        <receiver
+            android:name=".receivers.ConnectionReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
