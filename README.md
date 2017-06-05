@@ -4,8 +4,16 @@ ScoketClient is a android app implements on basic socket programming concepts. i
 ## Features
 * Display all currently online users
 * One to one real time chatting
-* Left Right Alignment of chat messages
 
+## How to use ?
+* first Clone [ServerSocket](https://github.com/pawanchauhan05/ServerSocket) first, then start server.
+* get the IP address of server and set it into Constants.java file
+```java
+public static final String SERVER = "192.168.X.X";
+```
+* build and install app in mobile and get connected to the internet then start chatting.
+
+>**_"All devices must connected to the same network."_**
 
 ## Contribution
 I welcome and encourage all pull requests. It usually will take me within 24-48 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
