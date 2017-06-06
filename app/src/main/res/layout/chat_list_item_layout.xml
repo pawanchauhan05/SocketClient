@@ -3,21 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textViewLeft"
-        android:padding="5dp"
-        android:textSize="16dp"
-        android:text="@string/app_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/linearLayoutLeft"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="16dp"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textViewRight"
-        android:gravity="right"
-        android:padding="5dp"
-        android:textSize="16dp"
-        android:text="@string/app_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_gravity="top"
+            android:id="@+id/imageView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/left_arrow" />
+
+        <TextView
+            android:background="@drawable/rounded_corner_left"
+            android:id="@+id/textViewLeft"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:text="Android charting application xml ui design. Android charting application xml ui design tutorial with example. Android charting application xml ui design. Android charting application xml ui design."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/linearLayoutLeft"
+        android:id="@+id/relativeLayoutRight"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="right"
+            android:layout_toLeftOf="@+id/imageViewRightArrow"
+            android:background="@drawable/rounded_corner_right"
+            android:id="@+id/textViewRight"
+            android:padding="10dp"
+            android:textSize="16dp"
+            android:text="Android charting application xml ui design. Android charting application xml ui design tutorial with example. Android charting application xml ui design. Android charting application xml ui design."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:rotation="270"
+            android:id="@+id/imageViewRightArrow"
+            android:layout_alignParentRight="true"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/left_arrow" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>
